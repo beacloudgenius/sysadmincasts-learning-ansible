@@ -1,0 +1,45 @@
+
+                           _           _                       _       
+      Welcome to          | |         (_)                     | |      
+   ___ _   _ ___  __ _  __| |_ __ ___  _ _ __     ___ __ _ ___| |_ ___ 
+  / __| | | / __|/ _` |/ _` | '_ ` _ \| | '_ \   / __/ _` / __| __/ __|
+  \__ \ |_| \__ \ (_| | (_| | | | | | | | | | | | (_| (_| \__ \ |_\__ \
+  |___/\__, |___/\__,_|\__,_|_| |_| |_|_|_| |_|  \___\__,_|___/\__|___/
+        __/ |                                                          
+       |___/   
+
+  #43, #45, #46, #47 - Learning Ansible with Vagrant
+
+  http://sysadmincasts.com/episodes/43-19-minutes-with-ansible-part-1-4
+ 
+
+        File Manifest
+
+    bootstrap-mgmt.sh - Install/Config Ansible & Deploy Code Snippets
+             examples - Code Snippets
+               README - This file ;)
+          Vagrantfile - Defines Vagrant Environment
+
+
+## Notes
+
+UPDATED TO WORK WITH Ansible 2.7.10 and above.
+
+I have changed the name of the loadbalancer to `lb1` due to issues with having the same group and hostname.
+
+Setting up:
+
+```
+    vagrant up // will take a while
+    vagrant ssh mgmt
+    ssh-keyscan lb1 web1 web2 >> .ssh/known_hosts
+    ssh-keygen // accept the defaults - no password
+    ansible-playbook e45-ssh-addkey.yml --ask-pass // password 'vagrant'
+```
+
+You should now be able to run the playbooks.
+
+
+
+
+

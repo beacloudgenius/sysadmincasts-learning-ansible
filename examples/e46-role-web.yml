@@ -1,0 +1,20 @@
+---
+
+# common
+- hosts: all
+  become: yes
+  become_user: root
+  become_method: sudo
+  gather_facts: no
+
+  roles:
+    - common
+
+# web
+- hosts: web
+  become: yes
+  become_user: root
+  become_method: sudo
+
+  roles:
+    - web
