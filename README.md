@@ -29,13 +29,13 @@ I have changed the name of the loadbalancer to `lb1` due to issues with having t
 
 Setting up:
 
-```
+
     vagrant up // will take a while
     vagrant ssh mgmt
     ssh-keyscan lb1 web1 web2 >> .ssh/known_hosts
     ssh-keygen // accept the defaults - no password
     ansible-playbook e45-ssh-addkey.yml --ask-pass // password 'vagrant'
-```
+
 
 You should now be able to run the playbooks.
 
